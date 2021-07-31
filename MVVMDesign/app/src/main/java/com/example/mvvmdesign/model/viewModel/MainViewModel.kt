@@ -17,4 +17,9 @@ class MainViewModel: ViewModel() {
         newList.remove(blog)
         list.value = newList
     }
+
+    @JvmName("getList1")
+    fun getList(): MutableLiveData<List<Blog>> {
+        return list
+    }
 }
