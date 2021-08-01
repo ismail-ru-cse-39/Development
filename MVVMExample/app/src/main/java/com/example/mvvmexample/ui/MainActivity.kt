@@ -1,9 +1,10 @@
-package com.example.mvvmexample
+package com.example.mvvmexample.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.mvvmexample.R
 import com.example.mvvmexample.data.Quote
 import com.example.mvvmexample.utilitis.InjectorUtils
 import kotlinx.android.synthetic.main.activity_main.*

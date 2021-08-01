@@ -1,6 +1,6 @@
 package com.example.mvvmexample.utilitis
 
-import com.example.mvvmexample.QuotesViewModelFactory
+import com.example.mvvmexample.ui.QuotesViewModelFactory
 import com.example.mvvmexample.data.FakeDatabase
 import com.example.mvvmexample.data.QuoteRepository
 

@@ -1,4 +1,4 @@
-package com.example.mvvmexample
+package com.example.mvvmexample.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
