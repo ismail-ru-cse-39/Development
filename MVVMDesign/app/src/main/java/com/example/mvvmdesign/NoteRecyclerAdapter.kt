@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmdesign.model.Blog
 import com.example.mvvmdesign.model.viewModel.MainViewModel
+import kotlinx.android.synthetic.main.item.view.*
 
 class NoteRecyclerAdapter(val viewModel: MainViewModel, val arrayList: ArrayList<Blog>, val context: Context):
     RecyclerView.Adapter<NoteRecyclerAdapter.NotesViewHolder>() {
@@ -22,7 +23,7 @@ class NoteRecyclerAdapter(val viewModel: MainViewModel, val arrayList: ArrayList
             return NotesViewHolder(root);
         }
 
-    override fun  onBindViewHolder(holder: NoteRecyclerAdapter.NotesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NoteRecyclerAdapter.NotesViewHolder, position: Int) {
         holder.bind(arrayList.get(position))
     }
 
@@ -38,22 +39,12 @@ class NoteRecyclerAdapter(val viewModel: MainViewModel, val arrayList: ArrayList
 
     inner class NotesViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding)  {
 
-      
-        
-
-        fun bind(blog: Blog) {
-            var textView: TextView
-            val deleteBtn: Button
-
-            textView = binding.findViewById(R.id.text)
-            deleteBtn = binding.findViewById(R.id.delete)
-            
-            textView.text = blog.title
-            deleteBtn.setOnClickListener{
-                viewModel.remove(blog);
+        fun bind(blog: Blog){
+            binding.title.text = blog.title
+            binding.delete.setOnClickListener {
+                viewModel.remove(blog)
                 notifyItemRemoved(arrayList.indexOf(blog))
             }
-           
         }
     }
 }
