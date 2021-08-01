@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmdesign.model.Blog
 import com.example.mvvmdesign.model.viewModel.MainViewModel
 import com.example.mvvmdesign.model.viewModel.MainViewModelFactory
-import java.util.Observer
+//import java.util.Observer
+import androidx.lifecycle.Observer
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 //class MainActivity : AppCompatActivity() {
 //
@@ -104,7 +107,9 @@ class MainActivity : AppCompatActivity() {
 
     fun observeData(){
         viewModel.getList().observe(this, Observer {
+            Log.i("data", it.toString())
 
+            mainrecycler.adapter = NoteRecyclerAdapter(viewModel, it as ArrayList<Blog>, this)
         })
     }
 
